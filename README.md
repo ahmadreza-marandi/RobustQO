@@ -1,4 +1,4 @@
-# Robust Quadratic Optimization H1
+# Robust Quadratic Optimization 
 
 This project contains all the data and codes related to the paper:
 Marandi, Ahmadreza, et al. "Extending the scope of robust quadratic optimization." arXiv preprint arXiv:1909.01762 (2019).
@@ -9,7 +9,7 @@ Marandi, Ahmadreza, et al. "Extending the scope of robust quadratic optimization
 * [Robust Norm Approximation] (#norm_approximation)
 * [Robust Regression Line] (#regression_line)
 
-## Technoplogies
+## Technologies
 For this project, we use
 * Matlab (the codes are written in Matlab R2019b)
 * Yalmip (https://yalmip.github.io/) to pass optimization to solvers
