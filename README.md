@@ -47,3 +47,8 @@ An example of how we use these functions is provided in ``` $ Portfolio_30.m ```
 
 
 ## Robust Regression Line
+
+This folder contains the data and the code related to solving a robust linear regression problem. We use the data of the papar 
+Candanedo, Luis M., Véronique Feldheim, and Dominique Deramaix. "Data driven prediction models of energy use of appliances in a low-energy house." Energy and buildings 140 (2017): 81-97.
+
+The code simply solves the optimization problem in Appendix E. The ```worst_value.m ``` function is the same function, explained above, to find an approximation of the worst-case scenario given a solution. 
