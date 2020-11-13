@@ -1,13 +1,13 @@
 # Robust Quadratic Optimization 
 
 This project contains all the data and codes related to the paper:
-Marandi, Ahmadreza, et al. "Extending the scope of robust quadratic optimization." arXiv preprint arXiv:1909.01762 (2019).
+Marandi, Ahmadreza, et al. "Extending the scope of robust quadratic optimization." arXiv preprint arXiv:1909.01762 (2019). In case of using these codes, you can cite the paper.  
 
 ## Table of contents
 * [Technologies](#technologies)
-* [Robust Portfolio Optimization] (#Robust-Portfolio-Optimization)
-* [Robust Norm Approximation] (#Robust-Norm-Approximation)
-* [Robust Regression Line] (#Robust-Regression-Line)
+* [Robust Portfolio Optimization](#Robust-Portfolio-Optimization)
+* [Robust Norm Approximation](#robust-norm-approximation)
+* [Robust Regression Line](#robust-regression-line)
 
 ## Technologies
 For this project, we use
@@ -17,7 +17,7 @@ For this project, we use
 
 ## Robust Portfolio Optimization
 To find the mathematical formulation of the problem, see Section 7.1 of the paper.
-To find a robust protfolio, we first need to construct an uncertainty set based on the historical data. We use the monthly average value weighted return of 5 and 30 industries from 1956 until 2015, obtained from  ``Industry Portfolios" data on the website http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html . For 5 industries, the data is stored in Data_5.mat . For 30 industries, the data is stored in Data_30.mat . The function ```$ RobustPortfolio.m ``` gets three inputs:
+To find a robust protfolio, we first need to construct an uncertainty set based on the historical data. We use the monthly average value weighted return of 5 and 30 industries from 1956 until 2015, obtained from  "Industry Portfolios" data on the website http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html . For 5 industries, the data is stored in Data_5.mat . For 30 industries, the data is stored in Data_30.mat . The function ```$ RobustPortfolio.m ``` gets three inputs:
 * z, which is the historical data
 * alpha, which is linked to the size of the uncertainty set (see the discussion on Section 7.1 of the paper)
 * lambda, which is the risk-aversion coefficient.
@@ -48,7 +48,8 @@ An example of how we use these functions is provided in ``` $ Portfolio_30.m ```
 
 ## Robust Regression Line
 
-This folder contains the data and the code related to solving a robust linear regression problem. We use the data of the papar 
+This folder contains the data and the code related to solving a robust linear regression problem. We use the data of the papar:
+
 Candanedo, Luis M., Véronique Feldheim, and Dominique Deramaix. "Data driven prediction models of energy use of appliances in a low-energy house." Energy and buildings 140 (2017): 81-97.
 
 The code simply solves the optimization problem in Appendix E. The ```worst_value.m ``` function is the same function, explained above, to find an approximation of the worst-case scenario given a solution. 
