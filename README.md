@@ -6,8 +6,8 @@ Marandi, Ahmadreza, et al. "Extending the scope of robust quadratic optimization
 ## Table of contents
 * [Technologies](#technologies)
 * [Robust Portfolio Optimization] (#Robust-Portfolio-Optimization)
-* [Robust Norm Approximation] (#Robust-Norm-Approximation)
-* [Robust Regression Line] (#Robust-Regression-Line)
+* [Robust Norm Approximation] (#robust-norm-approximation)
+* [Robust Regression Line] (#robust-regression-line)
 
 ## Technologies
 For this project, we use
