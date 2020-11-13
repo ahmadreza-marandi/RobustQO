@@ -44,7 +44,33 @@ An example of how we use these functions is provided in ``` $ Portfolio_30.m ```
 
 
 ## Robust Norm Approximation
+For norm approximation problems, we work with ill-conditioned matrices. The main reason for that is that for ill-conditioned matrices, the nominal solution can be extremly sensitive to an error to the data. Hence, we generate 10 random instances with the size of n, varying between 4 until 100. Moreover, we have construct different uncertainty sets, which can be seen as a generalized budget uncertainty set. This data is stored in ``` Random_instances.mat ``` . In this file, you will find three cells: 
 
+* matrix, with dimension 10x100. The first dimension is for the index of the random instance and the second dimension is for the size of the matrix A
+* right, with dimension 10x100. The first dimension is for the index of the random instance and the second dimension is for the size of the matrix b
+* Uncertainty, with dimension 10x100x3. The first dimension is for the index of the random instance, the second dimension is for the size, and the third one contains B1, B2, and K:
+
+```
+B1=Uncenrtainty{random_construction,n,1}
+B2=Uncenrtainty{random_construction,n,2}
+K=Uncenrtainty{random_construction,n,3};
+A=matrix{random_construction,n};
+b=right{random_construction,n};
+ ``` 
+For formulations, see Section 7.2. 
+
+These inputs are used to check the quality of the method. The codes related to optimization is provided in ``` Norm_approximation_randomUncertain.m ``` . Using this file, you can solve the inner and outer approximations (equations (32) and (33)). To evaluate the solutions, we developed a heuristic method to find the worst-case scenarios for a given solution. The function ``` worst_value.m ``` coded this heuristic method. This function has eight inputs:
+
+* rho, related to the size of the uncertainty set
+* B1, the coefficient used in constructing the uncertainty set,
+* B2, another coefficient used constructing the uncertainty set,
+* y, is the solution we are analyzing, 
+* x_value, is the value of Ay-b,
+* K, is linked to the size of the uncertainty set,
+* m, is the number of rows in A
+* n, is the size of the solution.
+
+For the description of the heuristic method, see Appendix D.
 
 ## Robust Regression Line
 
