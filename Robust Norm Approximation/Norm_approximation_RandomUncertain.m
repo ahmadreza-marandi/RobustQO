@@ -2,7 +2,7 @@ clear all
 load("Random_instances.mat")
 %% initialization/definition
 n_size=100;
-ran_size=10;
+ran_size=20;
 rho=0:0.0025:0.1;
 X_I=cell(ran_size,1,n_size);
 X_O=cell(ran_size,1,n_size);
@@ -52,9 +52,9 @@ for n=4:100
         %% making uncertainty set 
         for i=1:size(rho,2)
             %% finding the worst-case of the nominal solution
-            B_N=worst_value(rho(i), B1,B2,x_n,A*x_n-b,K,n,n);
-            Wors_N(random_construction,i)=norm((A+B_N)*x_n-b);
-            Wors_N_inv(random_construction,i)=norm((A+(rho(i)*repmat(sign(A*x_nn-b),1,n).*repmat(sign(x_nn)',n,1)))*x_nn-b);
+%             B_N=worst_value(rho(i), B1,B2,x_n,A*x_n-b,K,n,n);
+%             Wors_N(random_construction,i)=norm((A+B_N)*x_n-b);
+%             Wors_N_inv(random_construction,i)=norm((A+(rho(i)*repmat(sign(A*x_nn-b),1,n).*repmat(sign(x_nn)',n,1)))*x_nn-b);
             %% inner approximation     
             B=rho(i)*ones(n,n);
             Gamma=norm(B,2);
@@ -75,8 +75,8 @@ for n=4:100
             X_I_help(:,i)=value(y);
             Opval_I(random_construction,i,n)=tau+norm(b,2)^2;
             %% finding the worst-case using the hueristic
-            B_I=worst_value(rho(i), B1,B2,y,A*y-b,K,n,n);
-            Wors_I(random_construction,i)=norm((A+B_I)*y-b);
+%             B_I=worst_value(rho(i), B1,B2,y,A*y-b,K,n,n);
+%             Wors_I(random_construction,i)=norm((A+B_I)*y-b);
             Nom_I(random_construction,i,n)=norm((A)*y-b);
              %% checking assumption C
             y=sdpvar(n,1);
@@ -103,8 +103,8 @@ for n=4:100
             X_O_help(:,i)=value(y);
             Opval_O(random_construction,i,n)=tau+norm(b)^2;
             %% finding the worst-case using the hueristic
-            B_O=worst_value(rho(i), B1,B2,y,A*y-b,K,n,n);
-            Wors_O(random_construction,i)=norm((A+B_O)*y-b);
+%             B_O=worst_value(rho(i), B1,B2,y,A*y-b,K,n,n);
+%             Wors_O(random_construction,i)=norm((A+B_O)*y-b);
             Nom_O(random_construction,i,n)=norm((A)*y-b);
          end
         X_I(random_construction,1,n)={X_I_help};
