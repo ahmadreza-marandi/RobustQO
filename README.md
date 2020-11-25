@@ -2,6 +2,7 @@
 
 This project contains all the data and codes related to the paper:
 * Marandi, Ahmadreza, et al. "Extending the scope of robust quadratic optimization." arXiv preprint arXiv:1909.01762 (2019). 
+
 In case of using these codes, you should properly cite the paper.  
 
 ## Table of contents
